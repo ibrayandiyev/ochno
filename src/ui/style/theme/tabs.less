@@ -1,0 +1,113 @@
+@import '../mixins.less';
+
+.el-tabs {
+  background: rgb(var(--color-gray-1));
+}
+
+.el-tabs__header {
+  height: auto !important;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.el-tabs__nav-wrap {
+  margin-bottom: 0;
+
+  &.is-scrollable {
+    // TODO: The scrollable does not work right, it does not set the .is-disabled correctly for the arrows.
+    // padding: 0;
+  }
+}
+
+.el-tabs__nav-prev,
+.el-tabs__nav-next {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  width: 2rem;
+  z-index: 3; // .el-tabs__nav is z-index 2.
+  .expand-arrow-pseudo(); // Mixin the arrow to the right in the select field.
+
+  &.is-disabled {
+    display: none;
+  }
+
+  .el-icon-arrow-left,
+  .el-icon-arrow-right {
+    display: none;
+  }
+}
+
+.el-tabs__nav-prev {
+  left: 0;
+
+  &:after {
+    right: 1/3em;
+    transform: translateY(-50%) rotateZ(-45deg);
+  }
+}
+
+.el-tabs__nav-next {
+  right: 0;
+
+  &:after {
+    right: 2/3em;
+    transform: translateY(-50%) rotateZ(135deg);
+  }
+}
+
+.el-tabs__nav {
+  display: flex;
+  width: 100%;
+}
+
+.el-tabs__item {
+  font-size: inherit;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--common-size);
+  line-height: var(--common-size);
+  padding: 0 1.5em;
+  border: none !important;
+  border-radius: 0;
+  text-align: center !important;
+  color: rgb(var(--color-gray-5));
+  transition: background-color var(--transition-duration-input), color var(--transition-duration-input) !important;
+
+  &:hover,
+  &.is-active {
+    background: rgb(var(--color-gray-2));
+    color: rgb(var(--color-nature));
+  }
+}
+
+.el-tabs__content {
+  background: rgb(var(--color-gray-2));
+}
+
+.el-tabs--card {
+  > .el-tabs__header {
+    border: none;
+
+    .el-tabs__nav {
+      border: none;
+      border-radius: 0;
+    }
+  }
+}
+
+.el-tabs--left {
+  .el-tabs__header {
+    min-width: var(--common-size);
+    margin-right: 1px !important; // If 0 there will be an overlap.
+  }
+
+  .el-tabs__nav {
+    flex-direction: column;
+  }
+}

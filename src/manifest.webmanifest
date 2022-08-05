@@ -1,0 +1,20 @@
+{
+  "short_name": "Operated",
+  "name": "Ochno Operated",
+  "icons": [
+    {
+      "src": "/images/icons/favicon/Ochno-Favicon-196.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/icons/favicon/Ochno-Favicon-196.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "background_color": "#0F0F0F",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#0F0F0F"
+}

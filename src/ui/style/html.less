@@ -1,0 +1,60 @@
+body {
+  margin: 0; // Remove default margin.
+  background-color: rgb(var(--color-black));
+
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent; // Do not use the tapping highlight that is default on phones.
+  -webkit-touch-callout: none; // Do not use device specific callout menus.
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(var(--color-gray-4), 0.5);
+}
+
+div:focus {
+  outline-width: 0;
+}
+
+a {
+  color: rgb(var(--color-font));
+  text-decoration: none;
+
+  &:hover {
+    color: rgb(var(--color-nature));
+  }
+}
+
+input {
+  background: transparent;
+
+  &::-ms-clear {
+    display: none;
+  }
+}
+
+input[type="file"] {
+  display: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield; // For some reason this is not added by our prefixer.
+  appearance: textfield;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+textarea {
+  &::-webkit-resizer {
+    background-color: inherit;
+  }
+}

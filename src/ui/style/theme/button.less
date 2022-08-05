@@ -1,0 +1,61 @@
+@import '../mixins.less';
+
+.el-button {
+  letter-spacing: var(--capital-letter-spacing);
+  text-transform: uppercase;
+  height: var(--field-size);
+  padding: 0 calc(var(--field-size) * 0.75);
+  background-color: transparent;
+  border: 1px solid;
+  border-color: inherit !important;
+  border-radius: calc(var(--field-size) / 2);
+  color: rgb(var(--color-font));
+  transition: background-color var(--transition-duration-input), border-color var(--transition-duration-input), color var(--transition-duration-input);
+
+  // STATES
+  &:focus { // This rule needs to be before others or it will take precedence.
+    background-color: transparent;
+    color: rgb(var(--color-font));
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: rgb(var(--color-nature));
+  }
+
+  &:active {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    color: rgb(var(--color-font));
+  }
+
+  &.is-disabled,
+  &.is-disabled:hover {
+    background-color: transparent;
+    opacity: var(--opacity-disabled);
+  }
+
+  &.color-primary {
+    color: rgb(var(--color-primary));
+  }
+
+  + .el-button {
+    margin-left: var(--column-gap);
+  }
+
+  // Modifiers
+  &.-circle,
+  &.-square,
+  &.-quadratic {
+    background-color: transparent;
+    // .-circle-interaction();
+  }
+
+  &.-square,
+  &.-quadratic {
+    padding-inline: 1rem;
+  }
+
+  &.-borderless {
+    margin-left: 0;
+  }
+}

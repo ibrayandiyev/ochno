@@ -1,0 +1,119 @@
+.badge {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: ~'calc(100% + 0.4rem)';
+    left: -0.4rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: rgb(var(--color-primary));
+    opacity: 0;
+    animation: fade-to-1 0.4s forwards;
+  }
+}
+
+.bullet {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--rgba-field);
+}
+
+.click-trap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  // Cannot use right and bottom values in case the click trap is inside another fixed position.
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: -1;
+}
+
+.drag-handle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 2px;
+    border-top: 2px dotted;
+    border-bottom: 2px dotted;
+    border-color: inherit;
+  }
+}
+
+.back-arrow {
+  .header-badge:after {
+    bottom: -0.35rem;
+  }
+
+  .icon-arrow {
+    transform: rotateZ(180deg);
+  }
+}
+
+.header-info {
+  justify-content: center;
+  text-align: center;
+
+  .info {
+    max-width: var(--max-width-field);
+    margin: auto;
+    opacity: var(--opacity-heavy);
+  }
+}
+
+.row-lines.row-lines { // NOTE: Double-classing this to increase specificity.
+  margin-bottom: -1px; // Border takes one px.
+  padding: 0.75em 0.25em;
+  border-top: 1px solid var(--rgba-row-line) !important;
+
+  &:last-child {
+    border-bottom: 1px solid var(--rgba-row-line) !important;
+  }
+
+  &.-common-height {
+    padding: 0;
+  }
+}
+
+.row-lines-inner.row-lines-inner { // NOTE: Double-classing this to increase specificity.
+  border-bottom: 1px solid var(--rgba-row-line) !important;
+
+  &:last-child {
+    border-bottom: none !important;
+  }
+}
+
+.column-lines.column-lines { // NOTE: Double-classing this to increase specificity.
+  border-left: 1px solid var(--rgba-row-line) !important;
+
+  &:last-child {
+    border-right: 1px solid var(--rgba-row-line) !important;
+  }
+}
+
+.column-lines-inner.column-lines-inner { // NOTE: Double-classing this to increase specificity.
+  border-right: 1px solid var(--rgba-row-line) !important;
+
+  &:last-child {
+    border-right: none !important;
+  }
+}
+
+.disabled-port {
+  filter: blur(2px);
+
+  &.el-checkbox.is-disabled.is-checked { // The complicated selector is due to specificity requirements.
+    background-color: var(--rgba-field) !important;
+  }
+}

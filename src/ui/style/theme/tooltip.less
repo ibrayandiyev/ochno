@@ -1,0 +1,45 @@
+.el-tooltip__popper {
+  font-size: inherit;
+  line-height: inherit;
+  padding: 1rem 1.5rem;
+  border: none;
+  background-color: rgb(var(--color-black)) !important;
+  color: var(--rgba-font) !important;
+  transition: opacity var(--transition-duration-open);
+}
+
+.el-tooltip__popper[aria-hidden=true] {
+  transition: opacity var(--transition-duration-close);
+}
+
+.el-popper__arrow:after {
+  content: none !important;
+}
+
+.el-popper[x-placement^=top],
+.el-tooltip__popper[x-placement^=top] {
+   .el-popper__arrow {
+     border-top-color: rgb(var(--color-black));
+   }
+}
+
+.el-popper[x-placement^=right],
+.el-tooltip__popper[x-placement^=right] {
+  .el-popper__arrow {
+    border-right-color: rgb(var(--color-black));
+  }
+}
+
+.el-popper[x-placement^=bottom],
+.el-tooltip__popper[x-placement^=bottom] {
+  .el-popper__arrow {
+    border-bottom-color: rgb(var(--color-black));
+  }
+}
+
+.el-popper[x-placement^=left],
+.el-tooltip__popper[x-placement^=left] {
+  .el-popper__arrow {
+    border-left-color: rgb(var(--color-black));
+  }
+}

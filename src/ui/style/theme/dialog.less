@@ -1,0 +1,43 @@
+.el-dialog {
+  max-width: 95%;
+  width: 500px;
+  border: 1px solid rgb(var(--color-gray-5));
+  border-radius: 0;
+  background-color: rgb(var(--color-gray-1));
+  box-shadow: none;
+}
+
+.el-dialog__wrapper {
+  background-color: rgba(var(--color-zero), 0.5);
+}
+
+.el-dialog__header {
+  height: var(--common-size);
+  line-height: var(--common-size);
+  padding: 0 var(--common-size) 0 calc((var(--common-size) / 2));
+  background-color: rgb(var(--color-gray-2));
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  .el-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.el-dialog__title {
+  text-transform: uppercase;
+  color: inherit;
+}
+
+.el-dialog__headerbtn {
+  display: none;
+}
+
+.el-dialog__body {
+  font-size: inherit;
+  word-break: normal;
+  color: inherit;
+  padding: var(--row-gap) calc(var(--common-size) / 2);
+}

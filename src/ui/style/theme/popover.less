@@ -1,0 +1,19 @@
+.el-popover.el-popper {
+  font-size: inherit;
+  line-height: inherit;
+  min-width: 50px;
+  width: max-content !important;
+  padding: 1rem 1.5rem;
+  border: none;
+  background-color: rgb(var(--color-black));
+  color: var(--rgba-font-transparent);
+  pointer-events: none;
+  transition: opacity var(--transition-duration-open);
+
+  .el-popper__arrow {
+    &:before {
+      background-color: rgb(var(--color-black));
+      border-color: rgb(var(--color-black)) !important;
+    }
+  }
+}

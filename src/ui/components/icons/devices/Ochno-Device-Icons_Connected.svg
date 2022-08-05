@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 113.39 113.39" style="enable-background:new 0 0 113.39 113.39;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F4981C;}
+	.st1{fill:#A45A17;}
+	.st2{fill:#A45A16;}
+	.st3{fill:#FFFFFF;}
+	.st4{fill:none;stroke:#FFFFFF;stroke-width:4;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#FFFFFF;stroke-width:12;stroke-miterlimit:10;}
+</style>
+<g id="Background">
+	<circle class="st0" cx="56.69" cy="56.69" r="56.69"/>
+</g>
+<g id="Shadow">
+	<path class="st1" d="M56.69,108.44V92.84l4.36-5.53c0-2.26,1.46-3,1.46-3l1.77-2.74l3.24-34.98c-1.44-0.99-1.31-3-1.31-3
+		l-1.89-10.29L47.7,31.12L3.23,75.58c7.78,22.02,28.77,37.81,53.46,37.81V108.44z"/>
+</g>
+<g id="Icon">
+	<g>
+		<path class="st3" d="M66.22,32.57c0-1.27-1.03-2.3-2.3-2.3H49.47c-1.27,0-2.3,1.03-2.3,2.3v11.02h19.05V32.57z"/>
+		<path class="st3" d="M52.33,102.55h1.95v10.77c0.8,0.03,1.6,0.06,2.41,0.06s1.61-0.03,2.41-0.06v-10.77h1.95V87.3h-8.72V102.55z"
+			/>
+		<path class="st3" d="M67.52,46.58H45.86c-0.86,0-1.55,0.69-1.55,1.55v34.62c0,0.86,0.69,1.55,1.55,1.55h21.66
+			c0.86,0,1.55-0.69,1.55-1.55V48.13C69.07,47.28,68.38,46.58,67.52,46.58z M53.9,74.26l2.41-8.76h-5.7l8.62-11.33l-2.46,8.69h6.01
+			L53.9,74.26z"/>
+	</g>
+</g>
+</svg>

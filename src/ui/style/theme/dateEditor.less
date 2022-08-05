@@ -1,0 +1,237 @@
+.el-date-editor {
+  // NOTE: Very similar to .field.
+  position: relative;
+  box-sizing: border-box;
+  font-size: inherit;
+  width: 100%;
+  max-width: var(--max-width-field);
+  height: var(--field-size);
+  padding: 0;
+  line-height: var(--field-size);
+  border-radius: calc(var(--field-size) / 2) !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-align: center;
+  white-space: nowrap;
+  background-color: var(--rgba-field);
+  color: var(--rgba-font-transparent);
+  cursor: pointer;
+  transition: all var(--transition-duration-input);
+
+  &:hover {
+    background-color: var(--rgba-field-hover);
+  }
+
+  &.is-disabled {
+    background-color: var(--rgba-field);
+    color: var(--rgba-font-transparent);
+    opacity: var(--opacity-disabled);
+
+    input,
+    .el-input__inner {
+      background-color: transparent;
+      color: inherit;
+    }
+  }
+
+  &.el-input,
+  .el-input-inner {
+    width: 100%;
+  }
+
+  .el-input__wrapper {
+    height: inherit;
+    background-color: transparent !important;
+    border: none;
+    box-shadow: none !important;
+    color: inherit;
+  }
+
+  .el-input__inner {
+    // NOTE: Very similar to .field's el-select.
+    height: inherit;
+    text-align: center;
+    color: inherit;
+  }
+
+  .el-input__icon {
+    display: none;
+  }
+
+  .el-range-input,
+  .el-range-separator {
+    padding: 0;
+    font: inherit;
+    color: inherit;
+  }
+
+  .el-range-input {
+    width: 100%;
+  }
+}
+
+.el-date-editor--daterange.el-input__inner {
+  width: auto;
+}
+
+.el-time-range-picker__cell + .el-time-range-picker__cell {
+  border-left: 1px solid var(--rgba-row-line);
+}
+
+.el-time-range-picker__body {
+  border: none;
+}
+
+.el-time-panel__content {
+  &:before,
+  &:after {
+    border-color: var(--rgba-row-line);
+  }
+}
+
+.el-time-spinner__item {
+  color: rgb(var(--color-font-transparent));
+
+  &.disabled {
+    color: rgb(var(--color-gray-4));
+  }
+
+  &.active:not(.disabled) {
+    color: rgb(var(--color-primary));
+  }
+
+  &:hover:not(.disabled):not(.active) {
+    background: transparent;
+    color: rgb(var(--color-nature));
+  }
+}
+
+.el-time-panel__footer {
+  display: none;
+}
+
+.el-range-editor {
+  &.el-input__inner {
+    display: inline-grid;
+    grid-template-columns: 1fr auto 1fr;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+}
+
+
+// Dropdowns
+.el-time-panel,
+.el-picker-panel {
+  border: 0;
+  background-color: rgb(var(--color-black));
+  box-shadow: none;
+  color: var(--rgba-font-transparent);
+}
+
+.el-picker-panel__icon-btn {
+  font-size: inherit;
+  position: relative;
+  padding: 1.25rem;
+  margin: 0;
+  color: inherit;
+
+  &:hover {
+    color: rgb(var(--color-nature));
+  }
+
+  &:after {
+    right: 50%;
+  }
+
+  &.el-icon-arrow-left,
+  &.el-icon-arrow-right {
+    .expand-arrow-pseudo();
+
+    &:before {
+      content: none;
+    }
+    &:after {
+      transform: translate(55%, -70%) rotateZ(225deg);
+    }
+  }
+
+  &.el-icon-d-arrow-left,
+  &.el-icon-d-arrow-right {
+    .expand-double-arrow-pseudo();
+  }
+
+  &.el-icon-arrow-left,
+  &.el-icon-d-arrow-left {
+    transform: rotateZ(90deg);
+  }
+
+  &.el-icon-arrow-right,
+  &.el-icon-d-arrow-right {
+    transform: rotateZ(-90deg);
+  }
+}
+
+.el-date-range-picker__content.is-left {
+  border-color: var(--rgba-row-line);
+}
+
+.el-date-table {
+  th {
+    border-color: var(--rgba-row-line);
+    color: rgb(var(--color-gray-4));
+  }
+
+  td.next-month,
+  td.prev-month {
+    color: rgb(var(--color-gray-4));
+  }
+
+  td.available {
+    &:hover {
+      color: rgb(var(--color-primary));
+    }
+  }
+
+  td.today .el-date-table-cell__text {
+    color: rgb(var(--color-primary));
+  }
+
+  td.start-date,
+  td.end-date {
+    .el-date-table-cell {
+      color: rgb(var(--color-white));
+    }
+    .el-date-table-cell__text {
+      background-color: var(--rgba-value-set-bg);
+    }
+  }
+
+  td.in-range {
+    .el-date-table-cell {
+      background-color: rgb(var(--color-gray-3)) !important;
+      background-color: rgba(var(--color-white), var(--opacity-light)) !important;
+    }
+  }
+
+  td.disabled {
+    cursor: auto;
+
+    .el-date-table-cell {
+      background-color: transparent;
+      color: rgb(var(--color-gray-2));
+      cursor: auto;
+    }
+  }
+}
+
+.el-popper.el-popper.el-picker__popper {
+  background-color: transparent;
+  border: none;
+
+  .el-popper__arrow:before {
+    background-color: rgb(var(--color-black));
+    border-color: rgb(var(--color-black));
+  }
+}

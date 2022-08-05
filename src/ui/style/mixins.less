@@ -1,0 +1,78 @@
+.-circle-interaction() {
+  background-color: var(--rgba-field);
+  color: rgb(var(--color-font));
+  transition: color var(--transition-duration-input), background-color var(--transition-duration-input);
+
+  &:focus {
+    // Rule needs to be before others or it will take precedence.
+    background-color: var(--rgba-field);
+  }
+
+  &:hover {
+    background-color: var(--rgba-field-hover);
+    color: rgb(var(--color-nature));
+  }
+
+  &:active {
+    background-color: var(--rgba-field);
+    color: rgb(var(--color-nature));
+  }
+
+  &.is-disabled {
+    background-color: var(--rgba-field);
+  }
+}
+
+.pseudo-setup(@position: absolute) {
+  content: '';
+  display: block;
+  position: @position;
+}
+
+.expand-arrow-pseudo() {
+  &:after {
+    .pseudo-setup();
+    right: calc(var(--field-size) * 0.4);
+    top: 50%;
+    width: 0.7em;
+    height: 0.7em;
+    border-top: 2px solid rgb(var(--color-font));
+    border-left: 2px solid rgb(var(--color-font));
+    border-color: inherit;
+    transform: translateY(-80%) rotateZ(225deg);
+    pointer-events: none;
+    transition: transform var(--transition-duration-open), border-color var(--transition-duration-input);
+  }
+
+  &.is-focus:after {
+    transform: translateY(-20%) rotateZ(45deg);
+  }
+
+  &.-common-height:after {
+    right: calc(var(--common-size) * 0.4);
+  }
+}
+
+.expand-double-arrow-pseudo() {
+  &:before,
+  &:after {
+    .pseudo-setup();
+    left: 50%;
+    top: 50%;
+    border-top: 2px solid rgb(var(--color-font));
+    border-left: 2px solid rgb(var(--color-font));
+    border-color: inherit;
+    pointer-events: none;
+    transition: border-color var(--transition-duration-input);
+  }
+  &:before {
+    width: 0.6em;
+    height: 0.6em;
+    transform: translate(-50%, -115%) rotateZ(225deg)
+  }
+  &:after {
+    width: 0.7em;
+    height: 0.7em;
+    transform: translate(-50%, -50%) rotateZ(225deg);
+  }
+}

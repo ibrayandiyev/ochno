@@ -1,0 +1,91 @@
+.el-collapse {
+  border-color: var(--rgba-row-line);
+  border-bottom: none;
+}
+
+.el-collapse-item {
+  border-bottom: 1px solid var(--rgba-row-line);
+}
+
+.el-collapse-item__header,
+.el-collapse-item__content {
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  line-height: inherit;
+  transition: color var(--transition-duration-input);
+}
+
+.el-collapse-item__header,
+.el-collapse-item__wrap {
+  border: none;
+  background-color: transparent;
+}
+
+.el-collapse-item__header {
+  .expand-arrow-pseudo(); // Mixin the arrow to the right in the select field.
+  position: relative;
+  box-sizing: border-box;
+  height: var(--common-size);
+  padding: 0 var(--common-size) 0 calc(var(--common-size) / 2);
+
+  &:after { // arrow
+    right: calc(var(--common-size) / 2.5);
+  }
+
+  &.focusing:focus:not(:hover) { // Necessary to avoid special focus rule.
+    color: inherit;
+  }
+
+  > .icon,
+  > .-circle {
+    margin-right: 1rem;
+  }
+}
+
+.el-collapse-item__arrow {
+  display: none;
+}
+
+.el-collapse-item__content {
+  padding-bottom: 0;
+}
+
+// STATES
+.el-collapse-item:hover,
+.el-collapse-item.is-active {
+  .el-collapse-item__header {
+    color: rgb(var(--color-nature));
+  }
+}
+
+.el-collapse-item__header.is-active {
+  &:after {
+    transform: translateY(-20%) rotateZ(45deg);
+  }
+}
+
+// Modifers
+.-minimal.el-collapse {
+  margin-top: calc(var(--column-gap) * 1.5);
+  border: none;
+
+  .el-collapse-item {
+    border: none;
+  }
+
+  .el-collapse-item__header {
+    height: calc(var(--row-gap) * 2);
+    padding-left: 0;
+    color: rgb(var(--color-font));
+    font-weight: bold;
+
+    &:after {
+      right: 1.2rem;
+    }
+  }
+
+  .el-collapse-item__content {
+    padding: var(--column-gap) 0 0;
+  }
+}

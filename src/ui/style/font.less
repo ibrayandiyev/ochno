@@ -1,0 +1,126 @@
+/*
+ ABOUT FONTS
+font-size in px should not be in any other file than this, always use em or rem!
+
+We use regular (400) and bold (700) weights for our font.
+There are more options: light (300), semibold (600), extra-bold (800).
+If we need these, we need to load them in the import below, loading more takes more time for the page.
+*/
+// NOTE: Font import is done in server/views/parts/head. These kind of url-imports is not compatible with the less loader unfortunately.
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+html {
+  font-family: 'Open Sans', 'Segoe UI', 'Avenir', Helvetica, Arial, sans-serif;
+  font-size: var(--font-size);
+  font-weight: 400;
+  color: rgb(var(--color-font));
+}
+
+p {
+  width: 100%;
+  max-width: 60ch;
+}
+
+input, textarea, select, button {
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+h1, h2, h3, h4,
+.h1, .h2, .h3, .h4 {
+  font-weight: 700;
+  letter-spacing: var(--capital-letter-spacing);
+  text-transform: uppercase;
+  color: rgb(var(--color-gray-5));
+}
+
+h1, .h1 {
+  font-size: calc((4 / 3) * var(--font-size)); // 16px
+}
+
+h2, .h2 {
+  font-size: 1rem; // 12px
+}
+
+h3, .h3 {
+  font-size: calc((11 / 12) * var(--font-size)); // 11px
+}
+
+h4, .h4 {
+  font-size: calc((10 / 12) * var(--font-size)); // 11px
+  color: rgb(var(--color-gray-4))
+}
+
+h5, .h5 { // aka input font
+  font-size: calc((11 / 12) * var(--font-size)); // 11px
+  font-weight: 700;
+  color: var(--rgba-font-transparent);
+}
+
+
+.bold {
+  font-weight: 700;
+}
+
+.font-bigger { // relative
+  font-size: 1.66667em;
+}
+
+.font-smaller { // relative
+  font-size: 0.833333em;
+}
+
+.font-big1 { // fixed
+  font-size: 1.4rem;
+}
+
+.font-big2 { // fixed
+  font-size: 2rem;
+}
+
+.font-small1 { // fixed
+  font-size: 0.833333rem;
+}
+
+.font-small2 { // fixed
+  font-size: 0.66667rem;
+}
+
+.font-upper-case {
+  text-transform: uppercase;
+}
+
+.font-capitalize {
+  text-transform: capitalize;
+}
+
+.font-no-case {
+  text-transform: initial;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.font-transparent {
+  color: var(--rgba-font-transparent);
+}
+
+.text-selectable {
+  user-select: text;
+  -webkit-user-select: text;
+}

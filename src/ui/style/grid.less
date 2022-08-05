@@ -1,0 +1,244 @@
+.grid,
+.inline-grid,
+.auto-fr-grid,
+.control-grid {
+  display: grid;
+  column-gap: var(--column-gap);
+  row-gap: var(--row-gap);
+  align-items: center;
+
+  &.no-gap {
+    column-gap: 0;
+    row-gap: 0;
+
+    + .no-gap {
+      margin-top: 0;
+    }
+  }
+
+  + .grid,
+  + .auto-fr-grid,
+  + .control-grid {
+    margin-top: var(--row-gap);
+  }
+}
+
+.inline-grid {
+  display: inline-grid;
+}
+
+.vertical-grid {
+  grid-auto-flow: column;
+  row-gap: var(--column-gap);
+  column-gap: var(--row-gap);
+  justify-items: center;
+
+  + .vertical-grid {
+    margin-top: 0;
+  }
+}
+
+.auto-fr-grid {
+  grid-template-columns: auto 1fr;
+
+  > -circle,
+  > .icon {
+    justify-self: center;
+  }
+}
+
+.control-grid {
+  grid-template-columns: auto auto 1fr;
+  max-width: var(--max-width-controls);
+  margin: 0 auto;
+
+  > .el-button,
+  > .el-switch,
+  > .field {
+    max-width: var(--max-width-field);
+    justify-self: flex-end;
+  }
+
+  .number {
+    width: 6rem;
+  }
+}
+
+.control-grid-extra {
+  grid-template-columns: auto auto 1fr auto;
+  justify-content: center;
+}
+
+.control-grid-key-value {
+  grid-template-columns: auto 1fr auto 1fr;
+}
+
+.column-span-2 {
+  grid-column: span 2;
+}
+
+.column-span-3 {
+  grid-column: span 3;
+}
+
+.grid-flow-column {
+  grid-auto-flow: column;
+}
+
+// STATES
+// To use the responsive states, put a classes on a parent of the control grid. Like this:
+// v-responsive="{ 'no-control-label': el => el.width <= 350 }"
+// v-responsive="{ 'no-control-icon': el => el.width <= 350 }"
+// v-responsive="{ 'no-control-number': el => el.width <= 350 }"
+
+.vertical-grid {
+  &.control-grid-extra {
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: auto !important;
+  }
+}
+
+.no-control-icon {
+  &.control-grid,
+  .control-grid {
+    > .-circle,
+    > .icon {
+      display: none;
+    }
+  }
+}
+
+.no-control-label {
+  &.control-grid,
+  .control-grid {
+    > .label {
+      display: none;
+    }
+  }
+}
+
+.no-control-content {
+  &.control-grid,
+  .control-grid {
+    grid-template-columns: auto auto;
+
+    > .content {
+      display: none;
+    }
+  }
+}
+
+.no-control-number {
+  &.control-grid-extra,
+  .control-grid-extra {
+    grid-template-columns: auto auto 1fr;
+
+    > .number {
+      display: none;
+    }
+  }
+}
+
+.no-control-label,
+.no-control-icon {
+  &.control-grid,
+  .control-grid,
+  &.no-control-number.control-grid-extra,
+  &.no-control-number .control-grid-extra,
+  .no-control-number.control-grid-extra,
+  .no-control-number .control-grid-extra {
+    grid-template-columns: auto 1fr;
+
+    &.vertical-grid {
+      grid-template-rows: auto 1fr;
+    }
+  }
+
+  &.control-grid-extra,
+  .control-grid-extra {
+    grid-template-columns: auto 1fr auto;
+
+    &.vertical-grid {
+      grid-template-rows: auto 1fr auto;
+    }
+  }
+
+  &.control-grid-key-value,
+  .control-grid-key-value {
+    grid-template-columns: 1fr 1fr !important; // This will overwrite the double no-control below
+
+    &.vertical-grid {
+      grid-template-rows: 1fr 1fr !important; // This will overwrite the double no-control below
+    }
+  }
+
+  &.no-control-content {
+    &.control-grid,
+    .control-grid {
+      grid-template-columns: auto;
+
+      &.vertical-grid {
+        grid-template-rows: auto;
+      }
+    }
+
+    &.control-grid-extra,
+    .control-grid-extra {
+      grid-template-columns: auto auto;
+
+      &.vertical-grid {
+        grid-template-rows: auto auto;
+      }
+    }
+  }
+}
+
+.no-control-icon.no-control-label,
+.no-control-icon .no-control-label,
+.no-control-label .no-control-icon {
+  &.control-grid,
+  .control-grid,
+  &.no-control-number.control-grid-extra,
+  &.no-control-number .control-grid-extra,
+  .no-control-number.control-grid-extra,
+  .no-control-number .control-grid-extra {
+    grid-template-columns: 1fr;
+
+    &.vertical-grid {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  &.control-grid-extra,
+  .control-grid-extra {
+    grid-template-columns: 1fr auto;
+
+    &.vertical-grid {
+      grid-template-rows: 1fr auto;
+    }
+  }
+}
+
+.no-control-icon.no-control-label.no-control-content,
+.no-control-icon .no-control-label .no-control-content,
+.no-control-icon .no-control-content .no-control-label,
+.no-control-label .no-control-icon .no-control-content,
+.no-control-label .no-control-content .no-control-icon,
+.no-control-content .no-control-icon .no-control-label,
+.no-control-content .no-control-label .no-control-icon {
+  &.control-grid,
+  .control-grid {
+    display: none;
+  }
+}
+
+
+// COMPONENT INTERACTION
+.grid,
+.inline-grid,
+.auto-fr-grid,
+.control-grid {
+  > .el-button + .el-button {
+    margin-left: 0;
+  }
+}

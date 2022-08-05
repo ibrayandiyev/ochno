@@ -1,0 +1,150 @@
+/* CSS VARIABLES */
+:root {
+  /* PROFILE COLORS AND OPACITIES */
+  // NOTE: Colors may be used in other places as rgb or hex, do not change them without searching.
+  --color-black: 15,15,15; // #0F0F0F
+  --color-gray-1: 24,25,25; // #181919
+  --color-gray-2: 34,35,35; // #222323
+  --color-gray-3: 70,71,74; // #46474A
+  --color-gray-4: 106,106,106; // #6A6A6A
+  --color-gray-5: 168,164,164; // #A8A4A4
+  --color-nature: 242,243,240; // #F2F3F0
+  --color-orange: 244,152,25; // #F49819
+
+  --opacity-light: 0.15;
+  --opacity-medium: 0.3;
+  --opacity-heavy: 0.7;
+
+  /* OTHER COLORS AND OPACITIES */
+  --color-zero: 0,0,0; // #000000
+  --color-gray-2a: 40,41,41; // #282929
+  --color-gray-4a: 134,135,136; // #868788
+  --color-white: 255,255,255; // #FFFFFF
+  --color-orange-shadow: 164,90,23; // #A45A17
+  --color-orange-lighter: 252,196,14; // #FCC40E
+  --color-orange-darker: 229,111,11; // #E56F0B
+  --color-cyan: 33,171,188; // #21ABBC
+  --color-cyan-shadow: 21,99,110; // #15636E
+
+  --opacity-disabled: 0.4;
+  --opacity-medium-heavy: 0.5;
+  --opacity-white-to-gray-5: 0.58; // Approximate visual opacity from white to gray-5. This is a bit less in actual color than gray-5, since fonts do not have big areas of white.
+
+  /* COMPONENT COLORS, OPACITIES, RGBA */
+  --color-primary: var(--color-orange);
+  --color-font: var(--color-gray-5);
+  --color-error: var(--color-orange);
+  --opacity-primary: var(--opacity-heavy);
+  --opacity-font: var(--opacity-heavy);
+  --rgba-font-transparent: rgba(var(--color-white), var(--opacity-font));
+
+  --rgba-icon-fg: rgb(var(--color-white));
+  --rgba-icon-shadow: rgb(var(--color-orange-shadow));
+  --rgba-icon-bg: rgb(var(--color-primary));
+  --rgba-row-line: rgb(var(--color-gray-3));
+  --rgba-field-color: rgba(var(--color-white), var(--opacity-medium));
+  --rgba-field: rgba(var(--color-white), var(--opacity-medium));
+  --rgba-field-hover: rgb(var(--color-gray-4a));
+  --rgba-field-active: rgb(var(--color-gray-3));
+  --rgba-field-focus: rgb(var(--color-gray-4a));
+  --rgba-field-divider: rgba(var(--color-white), var(--opacity-light));
+  --rgba-field-dropdown-hover: rgba(var(--color-white), 0.1);
+  --rgba-field-dropdown-selected: rgba(var(--color-zero), 0.2);
+  --rgba-value-set-bg: rgba(var(--color-primary), var(--opacity-primary));
+}
+
+.color-primary-inverted {
+  --color-primary: var(--color-cyan);
+  --color-orange-shadow: var(--color-cyan-shadow);
+  --rgba-icon-fg: rgb(var(--color-white));
+  --rgba-icon-shadow: rgb(var(--color-orange-shadow));
+  --rgba-icon-bg: rgb(var(--color-primary));
+  --rgba-value-set-bg: rgba(var(--color-primary), var(--opacity-primary));
+}
+
+
+.color-primary {
+  color: rgb(var(--color-primary)) !important;
+}
+
+.color-error {
+  color: rgb(var(--color-error)) !important;
+}
+
+.bg-zero {
+  background-color: rgb(var(--color-zero)) !important;
+  --rgba-row-line: rgb(var(--color-gray-2a));
+}
+
+.bg-black {
+  background-color: rgb(var(--color-black)) !important;
+  --rgba-row-line: rgb(var(--color-gray-2a));
+}
+
+.bg-gray-1 {
+  background-color: rgb(var(--color-gray-1)) !important;
+}
+
+.bg-gray-2 {
+  background-color: rgb(var(--color-gray-2)) !important;
+}
+
+.bg-gray-2a {
+  background-color: rgb(var(--color-gray-2a)) !important;
+}
+
+.bg-gray-3 {
+  background-color: rgb(var(--color-gray-3)) !important;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+.bg-error {
+  background-color: rgba(var(--color-error), var(--opacity-medium)) !important;
+}
+
+.bg-error-heavy {
+  background-color: rgba(var(--color-error), var(--opacity-heavy)) !important;
+}
+
+.background-cover {
+  background-size: cover;
+  background-position: center;
+}
+
+.background-polygons {
+  background-image: url('./images/polygons_4k.jpg');
+}
+
+.background-shards {
+  background-image: url('./images/shards_4k.jpg');
+}
+
+.background-spot {
+  background-image: url('./images/spot_4k.jpg');
+}
+
+.background-logo {
+  background-image: url('./images/Ochno-Logotyp_Icon.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: calc(var(--common-size) * 2);
+}
+
+.opacity-low {
+  opacity: var(--opacity-light);
+}
+
+.opacity-med {
+  opacity: var(--opacity-medium);
+}
+
+.opacity-hvy {
+  opacity: var(--opacity-heavy);
+}
+
+.opacity-mhy {
+  opacity: var(--opacity-medium-heavy);
+}

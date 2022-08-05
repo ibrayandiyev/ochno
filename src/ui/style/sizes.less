@@ -1,0 +1,119 @@
+:root {
+  --font-size: 12px;
+  --capital-letter-spacing: 0.05em;
+
+  --common-size: 5.5rem; // 66px
+  --field-size: 3.33333em; // 40px
+  --box-size: 1.66667em; // 20px
+  --box-inner-size: 0.83333em; // 10px
+  --icon-size: 1.5em; // 18px
+
+  --row-gap: 2em; // 24px
+  --column-gap: 1em; // 12px
+
+  --max-width-controls: 42em; // 504px
+  --max-width-field: 21em; // 252px
+
+  --spinner: 5rem; // 60px
+
+  /* FRAMEWORKS */
+  --el-font-size-base: var(--font-size);
+}
+
+.control-width {
+  max-width: var(--max-width-controls);
+  margin: auto;
+}
+
+.m-auto {
+  margin-inline: auto;
+}
+.m-block {
+  margin-block: var(--row-gap);
+}
+.m-block-2 {
+  margin-block: calc(var(--row-gap) * 2);
+}
+.m-up {
+  margin-top: var(--row-gap);
+}
+.m-up-2 {
+  margin-top: calc(var(--row-gap) * 2);
+}
+.m-down {
+  margin-bottom: var(--row-gap);
+}
+.m-down-1_5 {
+  margin-bottom: calc(var(--row-gap) * 1.5);
+}
+.m-down-2 {
+  margin-bottom: calc(var(--row-gap) * 2);
+}
+.m-down-col {
+  margin-bottom: var(--column-gap);
+}
+.m-down-common {
+  margin-bottom: var(--common-size);
+}
+.m-inline {
+  margin-inline: var(--column-gap);
+}
+.m-end {
+  margin-right: var(--column-gap);
+}
+.m-start {
+  margin-left: var(--column-gap);
+}
+.m-none {
+  margin: 0 !important;
+}
+
+.p-all {
+  padding: var(--row-gap);
+}
+.p-block {
+  padding-block: var(--row-gap);
+}
+.p-block-s {
+  padding-block: var(--column-gap);
+}
+.p-up {
+  padding-top: var(--row-gap);
+}
+.p-down {
+  padding-bottom: var(--row-gap);
+}
+.p-down-2 {
+  padding-bottom: calc(var(--row-gap) * 2);
+}
+.p-down-common {
+  padding-bottom: var(--common-size);
+}
+.p-inline {
+  padding-inline: var(--column-gap);
+}
+.p-inline-row {
+  padding-inline: var(--row-gap);
+}
+.p-end {
+  padding-right: var(--column-gap);
+}
+.p-start {
+  padding-left: var(--column-gap);
+}
+
+.fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.fill-height {
+  height: 100%;
+}
+
+.fill-view-height {
+  height: calc(var(--vh, 1vh) * 100);
+}

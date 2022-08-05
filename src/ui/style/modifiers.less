@@ -1,0 +1,57 @@
+.-block {
+  width: 100%;
+}
+
+
+.-common-height {
+  height: var(--common-size) !important;
+}
+
+.-borderless {
+  border: 0 !important;
+}
+
+.-pad1 {
+  padding: 1rem !important;
+}
+
+
+.-circular,
+.-quadratic,
+.-circle,
+.-square {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle; // If multiple elements with different content are next to each other they need to be aligned to look good.
+}
+
+.-circular,
+.-quadratic {
+  &.-common-height {
+    min-width: var(--common-size);
+  }
+}
+
+.-circular,
+.-circle {
+  border-radius: 100vh;
+}
+
+.-quadratic,
+.-square {
+  border-radius: 0 !important;
+}
+
+.-circle,
+.-square {
+  box-sizing: border-box;
+  width: var(--field-size);
+  height: var(--field-size);
+  padding: 0;
+  text-align: center;
+
+  &.-common-height {
+    width: var(--common-size);
+  }
+}
